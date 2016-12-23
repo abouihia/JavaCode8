@@ -13,6 +13,8 @@ public class Accumulator {
 		
 		System.out.println("SideEffect parallel sum done in: " +	measurePerf(Accumulator::sideEffectSum, 10_000_000L) + "msecs" );
 		
+		
+		
 	}
 	
 	// data race: 

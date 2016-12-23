@@ -43,6 +43,7 @@ public class Java8Chap6 {
 						"pizza", true, 550, Dish.Type.OTHER), new Dish(
 						"prawns", false, 300, Dish.Type.FISH), new Dish(
 						"salmon", false, 450, Dish.Type.FISH));
+		
 
 		// calculate howManyDishes
 
@@ -134,14 +135,7 @@ public class Java8Chap6 {
 		// Multilevel grouping
 
 		Map<Dish.Type, Map<CaloricLevel, List<Dish>>> menuDietByType = menu
-				.stream().collect(groupingBy(Dish::getType, groupingBy(d -> {
-					if (((Dish) d).getCalories() < 400)
-						return CaloricLevel.DIET;
-					else if (((Dish) d).getCalories() < 700)
-						return CaloricLevel.NORMAL;
-					else
-						return CaloricLevel.FAT;
-				})));
+				.stream().collect(groupingBy(Dish::getType, groupingBy(Dish::getLevelCalories)));
 
 		menuDietByType.forEach((k, v) -> System.out.println(k + "  : " + v));
 

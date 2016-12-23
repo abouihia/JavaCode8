@@ -1,14 +1,23 @@
 package com.brahim.testing.java8;
 
+import com.natixis.nie.contrat1.testing_code.Task;
+
 public class TestingCode {
 	
 	
 	
-	private void printScores(String... players) {
-	    for (int i = 0; i < players.length; ++i) {
-	    	String val  = players[i];
-	        System.out.format("%d%n", val);
-	    }
+	public void doSomething(Runnable  r ){
+		 r.run();
+	}
+	public void doSomething(Task  r ){
+		 r.execute();
+	}
+	
+	public static void main(String[] args) {
+		TestingCode lCode  = new TestingCode();
+		lCode.doSomething((Task)() ->{
+			System.out.println("Danger");
+		});
 	}
 
 }
