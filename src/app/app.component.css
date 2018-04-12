@@ -1,0 +1,14 @@
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 49, 0, 0.5);
+}
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#fd7e14;
+  color: white;
+  text-align: center;
+}
